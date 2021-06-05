@@ -4,5 +4,8 @@ It's a little game that you can play with someone in your terminal. Made in Go!
 
 ## Installation
 
-Clone this repository, inside `$GOPATH/src`, go to the source code and run `go build`. Then, execute the binary file.
+ATTENTION: Make sure your `$GOPATH` env variable is configured correctly.
 
+### Windows
+
+Install Golang [here](https://golang.org/dl) and its dependencies. Then, run `go get github.com/ocidenttal/tic-tac-toe`,`

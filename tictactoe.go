@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	. "tic-tac-toe/table"
 	"time"
+
+	"github.com/ocidenttal/tic-tac-toe/table"
 )
 
 func main() {
-	table := NewTable()
+	tab := table.NewTable()
 
 	// game mainloop
-	for table.Result == "" {
-		table.Print()
+	for tab.Result == "" {
+		tab.Print()
 
-		x, y, err := GetCoordinate()
+		x, y, err := table.GetCoordinate()
 		if err != nil {
 			fmt.Println(err)
 			time.Sleep(time.Second)
@@ -21,7 +22,7 @@ func main() {
 			continue
 		}
 
-		input, err := GetInput()
+		input, err := table.GetInput()
 		if err != nil {
 			fmt.Println(err)
 			time.Sleep(time.Second)
@@ -29,19 +30,19 @@ func main() {
 			continue
 		}
 
-		if table.IsMarked(x, y) {
+		if tab.IsMarked(x, y) {
 			fmt.Println("this place is already marked")
 			time.Sleep(time.Second)
 			ClearScreen()
 			continue
 		}
 
-		table.Mark(x, y, input)
-		table.Validate()
+		tab.Mark(x, y, input)
+		tab.Validate()
 		ClearScreen()
 	}
-	table.Print()
-	fmt.Printf("\n%s!\n", table.Result)
+	tab.Print()
+	fmt.Printf("\n%s!\n", tab.Result)
 }
 
 // ClearScreen will clear the terminal screen

@@ -2,8 +2,8 @@ package table
 
 import "errors"
 
-// Errors declaration
+// Possible errors for GetCoordinate() and GetInput() functions.
 var (
-	InvalidCoordinate error = errors.New("Invalid coordinate")
-	InvalidInput      error = errors.New("Invalid input")
+	ErrInvalidCoordinate error = errors.New("Invalid coordinate")
+	ErrInvalidInput      error = errors.New("Invalid input")
 )

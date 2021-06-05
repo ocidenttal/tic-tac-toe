@@ -1,4 +1,4 @@
-// package table implements
+// Package table implements
 // the table abstraction for
 // the game
 package table

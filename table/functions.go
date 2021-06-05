@@ -27,10 +27,10 @@ func GetCoordinate() (int, int, error) {
 	fmt.Scanf("%d", &y)
 
 	if !IsValid(x) {
-		return 0, 0, InvalidCoordinate
+		return 0, 0, ErrInvalidCoordinate
 	}
 	if !IsValid(y) {
-		return 0, 0, InvalidCoordinate
+		return 0, 0, ErrInvalidCoordinate
 	}
 	return x, y, nil
 }
@@ -46,7 +46,7 @@ func GetInput() (string, error) {
 	if input == "X" || input == "O" {
 		return input, nil
 	}
-	return "", InvalidInput
+	return "", ErrInvalidInput
 }
 
 // IsValid will check if the coordinate inserted is
